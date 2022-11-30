@@ -1,11 +1,89 @@
 import { Configuration, OpenAIApi } from "openai";
 const translate = require("@iamtraction/google-translate");
+const { Client } = require("@notionhq/client");
+
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+const notion = new Client({ auth: process.env.NOTION_API_KEY });
+const databaseId = process.env.NOTION_DATABASE_ID;
+
+async function addToDatabase(
+  databaseId,
+  burmese_query,
+  english_query,
+  burmese_response,
+  english_response,
+  dateString
+) {
+  try {
+    const response = await notion.pages.create({
+      parent: {
+        database_id: databaseId,
+      },
+      properties: {
+        burmese_query: {
+          type: "title",
+          title: [
+            {
+              type: "text",
+              text: {
+                content: burmese_query,
+              },
+            },
+          ],
+        },
+        english_query: {
+          type: "rich_text",
+          rich_text: [
+            {
+              type: "text",
+              text: {
+                content: english_query,
+              },
+            },
+          ],
+        },
+        burmese_response: {
+          type: "rich_text",
+          rich_text: [
+            {
+              type: "text",
+              text: {
+                content: burmese_response,
+              },
+            },
+          ],
+        },
+        english_response: {
+          type: "rich_text",
+          rich_text: [
+            {
+              type: "text",
+              text: {
+                content: english_response,
+              },
+            },
+          ],
+        },
+        Date: {
+          // Date is formatted as YYYY-MM-DD or null
+          type: "date",
+          date: {
+            start: dateString,
+          },
+        },
+      },
+    });
+    console.log(response);
+  } catch (error) {
+    console.error(error.body);
+  }
+}
+
 const openai = new OpenAIApi(configuration);
-const basePromptPrefix = "";
+const basePromptPrefix = "Write ";
 const generateAction = async (req, res) => {
   // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
@@ -26,6 +104,22 @@ const generateAction = async (req, res) => {
     from: "en",
     to: "my",
   });
+  const dateNow = new Date();
+  var dateString =
+    dateNow.getFullYear() +
+    "-" +
+    (dateNow.getMonth() + 1) +
+    "-" +
+    dateNow.getDate();
+  console.log(dateString);
+  addToDatabase(
+    databaseId,
+    `${req.body.userInput}`,
+    `${translated.text}`,
+    `${translatedEnglishBurmese.text}`,
+    `${basePromptOutput.text}`,
+    dateString
+  );
   res.status(200).json({ output: translatedEnglishBurmese });
 };
 

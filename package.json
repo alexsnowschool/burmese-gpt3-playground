@@ -12,6 +12,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@iamtraction/google-translate": "github:iamtraction/google-translate",
+    "@notionhq/client": "^2.2.2",
     "@vitalets/google-translate-api": "^9.0.0",
     "axios": "^1.2.0",
     "eslint": "8.27.0",
