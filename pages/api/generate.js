@@ -82,11 +82,14 @@ async function addToDatabase(
   }
 }
 
+
 const openai = new OpenAIApi(configuration);
 const basePromptPrefix = "Write ";
 const generateAction = async (req, res) => {
   // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
+  console.log(`NOTION_API_KEY: ${NOTION_API_KEY}`);
+  console.log(`NOTION_DATABASE_ID: ${NOTION_DATABASE_ID}`);
   const translated = await translate(`${req.body.userInput}`, {
     from: "my",
     to: "en",
