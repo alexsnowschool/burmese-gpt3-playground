@@ -1,3 +1,2 @@
-# buildspace 
-### Welcome 👋
-This is the starter template for the [build your own AI writing assistant w/ GPT-3](https://buildspace.so/builds/ai-writer) project.
+# Alex Snow School 👋
+### GPT-3 နဲ့ Google Translate ကို သုံးပြီး မြန်မာလို စာရေးကြည့်ကြမယ်။ 
