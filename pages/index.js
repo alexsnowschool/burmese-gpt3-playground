@@ -35,7 +35,7 @@ const Home = () => {
   return (
     <div className="root">
       <Head>
-        <title>မြန်မာလို့ GPT-3 နဲ့ စာရေးမယ်။ | @alexsnowschool</title>
+        <title>မြန်မာလို့ GPT-3 ဇာတ်လမ်း တိုလေတွေ ရေးစမ်းကြည်မယ်။ | @alexsnowschool</title>
       </Head>
       <div className="container">
         <div className="header">
@@ -43,7 +43,7 @@ const Home = () => {
             <h1>စာရေးကြစို့</h1>
           </div>
           <div className="header-subtitle">
-            <h2>စိတ်ထဲမှာ ပေါ်လာတဲ့ ကောင်းစဥ်လေတွေကို စမ်းရေးကြည့်ကြမယ်။</h2>
+            <h2>စိတ်ထဲမှာ ပေါ်လာတဲ့ ကောင်းစဥ်လေတွေကို  ဇာတ်လမ်း အနေနဲ့ စမ်းရေးကြည့်ကြမယ်။</h2>
           </div>
         </div>
       </div>
