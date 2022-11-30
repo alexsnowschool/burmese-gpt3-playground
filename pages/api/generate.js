@@ -9,6 +9,10 @@ const configuration = new Configuration({
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_DATABASE_ID;
 
+console.log(`NOTION_API_KEY: ${process.env.NOTION_API_KEY}`);
+console.log(`NOTION_DATABASE_ID: ${process.env.NOTION_DATABASE_ID}`);
+
+
 async function addToDatabase(
   databaseId,
   burmese_query,
@@ -88,9 +92,6 @@ const basePromptPrefix = "Write ";
 const generateAction = async (req, res) => {
   // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
-  console.log(`NOTION_API_KEY: ${process.env.NOTION_API_KEY}`);
-  console.log(`NOTION_DATABASE_ID: ${process.env.NOTION_DATABASE_ID}`);
-  
   const translated = await translate(`${req.body.userInput}`, {
     from: "my",
     to: "en",
