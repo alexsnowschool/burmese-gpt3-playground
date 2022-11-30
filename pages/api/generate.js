@@ -9,10 +9,6 @@ const configuration = new Configuration({
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_DATABASE_ID;
 
-console.log(`NOTION_API_KEY: ${process.env.NOTION_API_KEY}`);
-console.log(`NOTION_DATABASE_ID: ${process.env.NOTION_DATABASE_ID}`);
-
-
 async function addToDatabase(
   databaseId,
   burmese_query,
