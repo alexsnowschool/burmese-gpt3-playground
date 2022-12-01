@@ -95,7 +95,7 @@ const generateAction = async (req, res) => {
   const baseCompletion = await openai.createCompletion({
     model: "text-davinci-002",
     prompt: `${basePromptPrefix}${translated.text}`,
-    temperature: 0.5,
+    temperature: 0.7,
     max_tokens: 500,
   });
 
@@ -104,6 +104,7 @@ const generateAction = async (req, res) => {
     from: "en",
     to: "my",
   });
+  
   const dateNow = new Date();
   var month = dateNow.getMonth() + 1;
   var monthStr = month;
