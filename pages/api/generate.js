@@ -82,7 +82,6 @@ async function addToDatabase(
   }
 }
 
-
 const openai = new OpenAIApi(configuration);
 const basePromptPrefix = "Write ";
 const generateAction = async (req, res) => {
@@ -106,12 +105,19 @@ const generateAction = async (req, res) => {
     to: "my",
   });
   const dateNow = new Date();
-  var dateString =
-    dateNow.getFullYear() +
-    "-" +
-    (dateNow.getMonth() + 1) +
-    "-" +
-    dateNow.getDate();
+  var month = dateNow.getMonth() + 1;
+  var monthStr = month;
+  if (month < 10) {
+    monthStr = "0" + month;
+  }
+
+  const date = dateNow.getDate();
+  var dayStr = date;
+  if (date < 10) {
+    dayStr = "0" + date;
+  }
+
+  var dateString = dateNow.getFullYear() + "-" + monthStr + "-" + dayStr;
   console.log(dateString);
   addToDatabase(
     databaseId,
