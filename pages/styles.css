@@ -213,7 +213,7 @@ textarea {
     flex: 0 0 auto;
     height: auto;
     left: 20px;
-    position: fixed;
+    /* position: fixed; */
     width: auto;
     z-index: 1;
 }
@@ -322,8 +322,9 @@ textarea {
 
 .output-content p {
     text-align: center;
+    font-size: large;
     white-space: pre-line;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.75);
 }
 
 @media (min-width: 810px) and (max-width: 1199px) {
