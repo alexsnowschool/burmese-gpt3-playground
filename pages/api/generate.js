@@ -93,10 +93,10 @@ const generateAction = async (req, res) => {
   });
   console.log(translated);
   const baseCompletion = await openai.createCompletion({
-    model: "text-davinci-002",
+    model: "text-davinci-003",
     prompt: `${basePromptPrefix}${translated.text}`,
-    temperature: 0.5,
-    max_tokens: 500,
+    temperature: 0.7,
+    max_tokens: 250,
   });
 
   const basePromptOutput = baseCompletion.data.choices.pop();
