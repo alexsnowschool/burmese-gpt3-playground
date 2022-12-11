@@ -5,7 +5,9 @@ import { useState } from "react";
 
 const Home = () => {
   const [userInput, setUserInput] = useState("");
+  const [userInputEnglish, setUserInputEnglish] = useState("");
   const [apiOutput, setApiOutput] = useState("");
+  const [apiOutputEnglish, setApiOutputEnglish] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
 
   const callGenerateEndpoint = async () => {
@@ -21,10 +23,12 @@ const Home = () => {
     });
 
     const data = await response.json();
-    const { output } = data;
+    const { output, textEnglish, userInputEnglish } = data;
     console.log("OpenAI replied...", output.text);
 
     setApiOutput(`${output.text}`);
+    setApiOutputEnglish(`${textEnglish}`);
+    setUserInputEnglish(`${userInputEnglish}`);
     setIsGenerating(false);
   };
   const onUserChangedText = (event) => {
@@ -66,12 +70,8 @@ const Home = () => {
               စိတ်ထဲမှာ ပေါ်လာတဲ့ ခေါင်းစဥ်လေတွေကို ဇာတ်လမ်း အနေနဲ့
               စမ်းရေးကြည့်ကြမယ်။
             </h2>
+            <h2> ဥပမာ - မြန်မာနိုင်ငံအကြောင်း နောက်ခံထားပြီး ဇာတ်လမ်းရေးပါ။</h2>
             <h2>
-              {" "}
-              ဥပမာ - မြန်မာနိုင်ငံအကြောင်း နောက်ခံထားပြီး ဇာတ်လမ်းရေးပါ။
-            </h2>
-            <h2>
-              {" "}
               မှတ်ချက် - မေးထားတွေကို သိမ်းထားတာဖြစ်တာမို့ ညစ်ညမ်းသော စာများကို
               မရေးစေချင်ပါဘူး။
             </h2>
@@ -97,12 +97,11 @@ const Home = () => {
             </div>
           </a>
         </div>
-        {/* New code I added here */}
         {apiOutput && (
           <div className="output">
             <div className="output-header-container">
               <div className="output-header">
-                <h3>Output</h3>
+                <h3>Output- မြန်မာ</h3>
               </div>
             </div>
             <div className="output-content">
@@ -110,6 +109,18 @@ const Home = () => {
             </div>
           </div>
         )}
+        {/* {apiOutputEnglish && (
+          <div className="output">
+            <div className="output-header-container">
+              <div className="output-header">
+                <h3>Output - English</h3>
+              </div>
+            </div>
+            <div className="output-content">
+              <p>{apiOutputEnglish}</p>
+            </div>
+          </div>
+        )} */}
       </div>
     </div>
   );

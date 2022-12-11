@@ -96,7 +96,7 @@ const generateAction = async (req, res) => {
     model: "text-davinci-003",
     prompt: `${basePromptPrefix}${translated.text}`,
     temperature: 0.7,
-    max_tokens: 250,
+    max_tokens: 300,
   });
 
   const basePromptOutput = baseCompletion.data.choices.pop();
@@ -104,7 +104,7 @@ const generateAction = async (req, res) => {
     from: "en",
     to: "my",
   });
-  
+
   const dateNow = new Date();
   var month = dateNow.getMonth() + 1;
   var monthStr = month;
@@ -128,7 +128,11 @@ const generateAction = async (req, res) => {
     `${basePromptOutput.text}`,
     dateString
   );
-  res.status(200).json({ output: translatedEnglishBurmese });
+  res.status(200).json({
+    output: translatedEnglishBurmese,
+    textEnglish: basePromptOutput.text,
+    userInputEnglish: translated.text,
+  });
 };
 
 export default generateAction;
