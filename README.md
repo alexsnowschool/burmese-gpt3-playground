@@ -15,7 +15,7 @@ cd burmese-gpt3-playground && npm install
 3. Update .env file with specfic keys
 ```{r, engine='bash', count_lines}
 OPENAI_API_KEY=<PLACEHOLDER>
-NOTION_API_KE=<PLACEHOLDER>
+NOTION_API_KEY=<PLACEHOLDER>
 NOTION_DATABASE_ID=<PLACEHOLDER>
 ```
 4. Run locally
