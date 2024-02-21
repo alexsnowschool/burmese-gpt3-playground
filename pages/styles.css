@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'century-burma', sans-serif;
 }
 
 .root {
@@ -414,3 +414,9 @@ textarea {
         transform: rotate(360deg);
     }
 }
+
+@font-face {
+    font-family: "century-burma";
+    src: url("../assets/century-burma.ttf");
+  }
+  
