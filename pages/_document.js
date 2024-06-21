@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <meta property="og:title" content="Burmese GPT-3 AI Writer" key="title"/>
+        <meta property="og:title" content="မြန်မာလို့ ရည်စားစာတိုလေးတွေ ရေးကြမယ်။ | @alexsnowschool" key="title"/>
         <meta property="og:description" content="build with alexsnowschool" key="description"/>
         <meta
           property="og:image"
