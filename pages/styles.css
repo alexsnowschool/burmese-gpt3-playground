@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap');
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'century-burma', sans-serif;
+    font-family: 'Padauk', sans-serif;
 }
 
 .root {
@@ -114,7 +115,7 @@ body {
 }
 
 textarea {
-    font-family: 'century-burma', sans-serif;
+    font-family: 'Padauk', sans-serif;
 }
 
 
@@ -417,12 +418,12 @@ textarea {
 
   
 @font-face {
-    font-family: 'century-burma';
+    font-family: 'Padauk';
     src: url('../assets/century-burma.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'century-burma', sans-serif;
+    font-family: 'Padauk', sans-serif;
 }
