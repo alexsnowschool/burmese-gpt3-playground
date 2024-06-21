@@ -415,10 +415,6 @@ textarea {
     }
 }
 
-@font-face {
-    font-family: "century-burma";
-    src: url("../assets/century-burma.ttf");
-  }
   
 @font-face {
     font-family: 'century-burma';
