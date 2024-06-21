@@ -418,7 +418,7 @@ textarea {
   
 @font-face {
     font-family: 'century-burma';
-    src: url('../assets/century-burma.ttf') format('woff2');
+    src: url('../assets/century-burma.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
 }
