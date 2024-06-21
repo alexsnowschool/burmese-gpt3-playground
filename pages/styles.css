@@ -114,7 +114,7 @@ body {
 }
 
 textarea {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'century-burma', sans-serif;
 }
 
 
@@ -420,3 +420,13 @@ textarea {
     src: url("../assets/century-burma.ttf");
   }
   
+@font-face {
+    font-family: 'century-burma';
+    src: url('../assets/century-burma.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'century-burma', sans-serif;
+}
