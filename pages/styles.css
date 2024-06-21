@@ -184,7 +184,7 @@ textarea {
     padding: 16px 24px;
     position: relative;
     text-decoration: none;
-    width: min-content;
+    width: auto;
     will-change: transform;
     cursor: pointer;
 }
