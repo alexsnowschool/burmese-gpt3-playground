@@ -40,7 +40,7 @@ const Home = () => {
     <div className="root">
       <Head>
         <title>
-          မြန်မာလို့ GPT-3 ဇာတ်လမ်း တိုလေတွေ ရေးစမ်းကြည်မယ်။ | @alexsnowschool
+          မြန်မာလို့ ရည်စားစာတိုလေးတွေ ရေးကြမယ်။ | @alexsnowschool
         </title>
       </Head>
       <div className="container">
@@ -60,17 +60,18 @@ const Home = () => {
             </div>
           </div>
           <div className="header-title">
-            <h1>စာရေးကြစို့</h1>
+            <h2>Lovely yours (ချစ်ရပါသော..)</h2>
           </div>
           <div className="header-subtitle">
             <div>
               <h1></h1>
             </div>
             <h2>
-              စိတ်ထဲမှာ ပေါ်လာတဲ့ ခေါင်းစဥ်လေတွေကို ဇာတ်လမ်း အနေနဲ့
-              စမ်းရေးကြည့်ကြမယ်။
+              စိတ်ထဲမှာ ပေါ်လာတဲ့ ကိုယ် crush လေရဲ့ personality တွေ
+              ပြောပြပြီး flirt လုပ်လို ကောင်းမယ့် ရည်စားစာတိုလေးတွေ
+              ရေးခိုင်မယ်။
             </h2>
-            <h2> ဥပမာ - မြန်မာနိုင်ငံအကြောင်း နောက်ခံထားပြီး ဇာတ်လမ်းရေးပါ။</h2>
+            <h2> ဥပမာ - အခုလက်ရှိ ကြိုက်နေတဲ့ ကောင်မလေးက အရမ်း introvert ဖြစ်ပြီး စာဖတ်ရတာ ကြိုက်တယ်။</h2>
             <h2>
               မှတ်ချက် - မေးထားတွေကို သိမ်းထားတာဖြစ်တာမို့ ညစ်ညမ်းသော စာများကို
               မရေးစေချင်ပါဘူး။
@@ -101,7 +102,7 @@ const Home = () => {
           <div className="output">
             <div className="output-header-container">
               <div className="output-header">
-                <h3>Output- မြန်မာ</h3>
+                <h3>ပို့လိုကောင်းမယ့် ရည်စားစာ</h3>
               </div>
             </div>
             <div className="output-content">

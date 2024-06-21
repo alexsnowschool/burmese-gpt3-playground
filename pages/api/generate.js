@@ -89,7 +89,7 @@ const openai = new OpenAI({
   dangerouslyAllowBrowser: true,
 });
 
-const basePromptPrefix = "Write ";
+const basePromptPrefix = "Write love letter to whom the personality is describe as ";
 const basePromptOutPostfix = " .And please make sure to make it around less than than 2000 characters if needed.";
 const generateAction = async (req, res) => {
   // Run first prompt
