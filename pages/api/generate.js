@@ -132,7 +132,7 @@ const generateAction = async (req, res) => {
     `${req.body.userInput}`,
     `${translated.text}`,
     `${translatedEnglishBurmese.text}`,
-    `${basePromptOutput.text}`,
+    `${basePromptOutput.content}`,
     dateString
   );
   res.status(200).json({
