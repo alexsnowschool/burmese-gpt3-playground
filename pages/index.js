@@ -108,7 +108,16 @@ const Home = () => {
             <div className="output-content">
               <p>{apiOutput}</p>
             </div>
+            <div className="output-header-container">
+              <div className="output-header">
+                <h3>English Version</h3>
+              </div>
+            </div>
+            <div className="output-content">
+              <p>{apiOutputEnglish}</p>
+            </div>
           </div>
+          
         )}
         {/* {apiOutputEnglish && (
           <div className="output">

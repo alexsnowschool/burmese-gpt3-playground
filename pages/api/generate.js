@@ -137,7 +137,7 @@ const generateAction = async (req, res) => {
   );
   res.status(200).json({
     output: translatedEnglishBurmese,
-    textEnglish: basePromptOutput.text,
+    textEnglish: basePromptOutput.content,
     userInputEnglish: translated.text,
   });
 };
