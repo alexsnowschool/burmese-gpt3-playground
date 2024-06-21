@@ -1,10 +1,7 @@
-import { Configuration, OpenAIApi } from "openai";
+
+import OpenAI from "openai"
 const translate = require("@iamtraction/google-translate");
 const { Client } = require("@notionhq/client");
-
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_DATABASE_ID;
@@ -82,25 +79,35 @@ async function addToDatabase(
   }
 }
 
-const openai = new OpenAIApi(configuration);
+const openai = new OpenAI({
+  baseURL: process.env.OPENROUTER_URI,
+  apiKey: process.env.OPENROUTER_API_KEY,
+  defaultHeaders: {
+    "HTTP-Referer": process.env.YOUR_SITE_URL, // Optional, for including your app on openrouter.ai rankings.
+    "X-Title": process.env.YOUR_SITE_NAME, // Optional. Shows in rankings on openrouter.ai.
+  },
+  dangerouslyAllowBrowser: true,
+});
+
 const basePromptPrefix = "Write ";
+const basePromptOutPostfix = " .And please make sure to make it around less than than 2000 characters if needed.";
 const generateAction = async (req, res) => {
   // Run first prompt
-  console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
+  console.log(`API: ${basePromptPrefix}${req.body.userInput}${basePromptOutPostfix}`);
   const translated = await translate(`${req.body.userInput}`, {
     from: "my",
     to: "en",
   });
   console.log(translated);
-  const baseCompletion = await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt: `${basePromptPrefix}${translated.text}`,
-    temperature: 0.7,
-    max_tokens: 300,
-  });
-
-  const basePromptOutput = baseCompletion.data.choices.pop();
-  const translatedEnglishBurmese = await translate(`${basePromptOutput.text}`, {
+  const baseCompletion = await openai.chat.completions.create({
+    // model: "openai/gpt-3.5-turbo",
+    model: process.env.MODEL_NAME,
+    messages: [
+      { role: "user", content: `${basePromptPrefix}${translated.text}${basePromptOutPostfix}`}
+    ],
+  })
+  const basePromptOutput = baseCompletion.choices[0].message;
+  const translatedEnglishBurmese = await translate(`${basePromptOutput.content}`, {
     from: "en",
     to: "my",
   });
