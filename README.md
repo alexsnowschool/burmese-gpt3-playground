@@ -1,5 +1,5 @@
 # Alex Snow School 👋
-### GPT-3 နဲ့ Google Translate ကို သုံးပြီး မြန်မာလို စာရေးကြည့်ကြမယ်။ 
+### Mistralai/mistral-7b-instruct နဲ့ Google Translate ကို သုံးပြီး မြန်မာလို စာရေးကြည့်ကြမယ်။ 
 
 **မှတ်ချက် - localhost မှ တဆင့်အသုံးပြုလိုသူများသည် [OpenAI](https://beta.openai.com/playground) အကောင့်အပြင် [Notion API integration](https://www.notion.so/help/guides/connect-tools-to-notion-api) ကို နာလည်ဖို့ လိုအပ်ပါသည်။ Next.js ဖြင့် ရေးဖြင့် ရေသားထားသောကြောင့် Next.js နှင့် React.js အခြေခံ ရှိသူများအတွက် ပိုမိုနာလည်းမှု ရစေမှာဖြစ်ပါသည်။**
 
